@@ -6,35 +6,85 @@
 
 ### Curso Python #01 - Seja um Programador.
 
+*This introductory course sets the stage for your programming journey. It covers the fundamental concepts of what programming is and what it means to be a programmer.*
+
 ----
 
 ### Curso Python #02 - Para que serve o Python ?.
+
+*Discover the versatility of Python! This course explores the wide range of applications for Python, from web development and data analysis to artificial intelligence and automation.*
 
 ----
 
 ### Curso Python #03 - Instalando o Python3 e o IDLE.
 
+*Get ready to code! This course guides you through the installation process for Python 3 and its default Integrated Development Environment (IDLE).*
+
 ----
 
 ### Curso Python #04 - Primeiros comandos em Python3.
+
+*Time to write your first lines of Python code! This course introduces you to basic commands and syntax, allowing you to interact with the Python interpreter.*
 
 ----
 
 ### Curso Python #05 - Instalado o PyCharm e o QPython3.
 
+*Explore more powerful development environments! This course demonstrates how to install and set up PyCharm (a popular professional IDE) and QPython3 (for mobile development).*
+
 ----
 
-### **EXE_01**
+### **EXE_01: Hello, World!**
 
 > Crie um programa que escreva "olá mundo!" na tela.
 
-```python3 
+#### Key Concepts:
+*   **`print()` function:** Used to display output to the console.
+
+#### Solution:
+```python
 print('Olá, Mundo!')
 ```
 
-### **EXE_02**
+#### Explanation:
+The `print()` function is a built-in Python function that takes one or more arguments and displays them on the screen. In this case, we pass the string `'Olá, Mundo!'` as an argument to the `print()` function.
+
+#### Expected Output:
+Running this code will display:
+```
+Olá, Mundo!
+```
+
+----
+
+### **EXE_02: Personalized Welcome Message**
 
 > Faça um programa que leia o nome de uma pessoa e mostre uma mensagem de boas-vindas.
+
+#### Key Concepts:
+*   **`input()` function:** Used to get input from the user.
+*   **`print()` function:** Used to display output.
+*   **String concatenation or f-strings:** To combine text with variables.
+
+#### Solution:
+```python
+nome = input('Digite seu nome: ')
+print(f'Olá, {nome}! Bem-vindo!')
+```
+
+#### Explanation:
+1.  The `input('Digite seu nome: ')` function prompts the user to enter their name and stores the typed value in the variable `nome`.
+2.  The `print(f'Olá, {nome}! Bem-vindo!')` function then displays a welcome message.
+    *   The `f` before the string indicates an "f-string" (formatted string literal).
+    *   `{nome}` inside the f-string is a placeholder that gets replaced by the value of the `nome` variable.
+
+#### Example Usage:
+If the user types 'Maria' when prompted, the output will be:
+```
+Olá, Maria! Bem-vindo!
+```
+
+----
 
 ### Curso Python #06 - Tipos Primitivos e Saída de Dados.
 
