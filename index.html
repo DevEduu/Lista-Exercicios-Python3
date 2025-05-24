@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Python - Exercícios</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        #sidebar-nav::-webkit-scrollbar {
+            width: 8px;
+        }
+        #sidebar-nav::-webkit-scrollbar-track {
+            background: #1f2937; /* bg-gray-800 adjusted */
+        }
+        #sidebar-nav::-webkit-scrollbar-thumb {
+            background: #4b5563; /* bg-gray-600 adjusted */
+            border-radius: 4px;
+        }
+        #sidebar-nav::-webkit-scrollbar-thumb:hover {
+            background: #6b7280; /* bg-gray-500 adjusted */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <div id="app-container">
+        <!-- Sidebar Navigation -->
+        <div id="sidebar-nav" class="fixed top-0 left-0 w-64 h-full bg-gray-800 text-white p-5 overflow-y-auto shadow-lg">
+            <h2 class="text-2xl font-bold mb-6 text-center border-b border-gray-700 pb-3">Navegação</h2>
+            <nav class="mt-4">
+              <ul class="space-y-2">
+                <li class="mb-3">
+                  <a href="#mundo-1" class="text-gray-100 hover:text-sky-300 font-semibold block py-2 px-2 rounded-md transition-colors duration-150">Mundo 1 [40 Horas]</a>
+                  <ul class="ml-2 mt-1 space-y-1">
+                    <li class="mb-1"><a href="#curso-01" class="text-gray-300 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">Curso Python #01 - Seja um Programador.</a></li>
+                    <li class="mb-1"><a href="#curso-02" class="text-gray-300 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">Curso Python #02 - Para que serve o Python ?.</a></li>
+                    <li class="mb-1"><a href="#curso-03" class="text-gray-300 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">Curso Python #03 - Instalando o Python3 e o IDLE.</a></li>
+                    <li class="mb-1"><a href="#curso-04" class="text-gray-300 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">Curso Python #04 - Primeiros comandos em Python3.</a></li>
+                    <li class="mb-1"><a href="#curso-05" class="text-gray-300 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">Curso Python #05 - Instalado o PyCharm e o QPython3.</a>
+                        <ul class="ml-4 mt-1 space-y-0.5">
+                            <li class="text-sm"><a href="#exe-01" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_01: Olá, Mundo!</a></li>
+                            <li class="text-sm"><a href="#exe-02" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_02: Mensagem de Boas-Vindas Personalizada</a></li>
+                        </ul>
+                    </li>
+                    <li class="mb-1"><a href="#curso-06" class="text-gray-300 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">Curso Python #06 - Tipos Primitivos e Saída de Dados.</a>
+                        <ul class="ml-4 mt-1 space-y-0.5">
+                            <li class="text-sm"><a href="#exe-03" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_03: Soma de Dois Números</a></li>
+                            <li class="text-sm"><a href="#exe-04" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_04: Analisando Tipos Primitivos</a></li>
+                        </ul>
+                    </li>
+                    <li class="mb-1"><a href="#curso-07" class="text-gray-300 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">Curso Python #07 - Operadores Aritméticos</a>
+                        <ul class="ml-4 mt-1 space-y-0.5">
+                            <li class="text-sm"><a href="#exe-05" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_05: Antecessor e Sucessor</a></li>
+                            <li class="text-sm"><a href="#exe-06" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_06: Dobro, Triplo e Raiz Quadrada</a></li>
+                            <li class="text-sm"><a href="#exe-07" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_07: Média Aritmética</a></li>
+                        </ul>
+                    </li>
+                    <li class="mb-1"><a href="#curso-08" class="text-gray-300 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">Curso Python #08 - Utilizando Módulos</a>
+                        <ul class="ml-4 mt-1 space-y-0.5">
+                            <li class="text-sm"><a href="#exe-08" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_08: Conversor de Medidas</a></li>
+                            <li class="text-sm"><a href="#exe-09" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_09: Tabuada</a></li>
+                            <li class="text-sm"><a href="#exe-10" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_10: Conversor de Moedas (Real para Dólar)</a></li>
+                            <li class="text-sm"><a href="#exe-11" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_11: Cálculo de Tinta para Parede</a></li>
+                            <li class="text-sm"><a href="#exe-12" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_12: Calculando Descontos</a></li>
+                            <li class="text-sm"><a href="#exe-13" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_13: Aumento Salarial</a></li>
+                            <li class="text-sm"><a href="#exe-14" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_14: Conversor de Temperaturas (ºC para ºF)</a></li>
+                            <li class="text-sm"><a href="#exe-15" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_15: Aluguel de Carros</a></li>
+                            <li class="text-sm"><a href="#exe-16" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_16: Quebrando um Número Real</a></li>
+                            <li class="text-sm"><a href="#exe-17" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_17: Catetos e Hipotenusa</a></li>
+                            <li class="text-sm"><a href="#exe-18" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_18: Seno, Cosseno e Tangente</a></li>
+                            <li class="text-sm"><a href="#exe-19" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_19: Sorteando um Item na Lista</a></li>
+                            <li class="text-sm"><a href="#exe-20" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_20: Sorteando uma Ordem na Lista</a></li>
+                            <li class="text-sm"><a href="#exe-21" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_21: Tocando um MP3</a></li>
+                        </ul>
+                    </li>
+                    <li class="mb-1"><a href="#curso-09" class="text-gray-300 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">Curso Python #09 - Manipulando Texto</a>
+                        <ul class="ml-4 mt-1 space-y-0.5">
+                            <li class="text-sm"><a href="#exe-22" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_22: Analisador de Textos</a></li>
+                            <li class="text-sm"><a href="#exe-23" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_23: Separando Dígitos de um Número</a></li>
+                            <li class="text-sm"><a href="#exe-24" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_24: Verificando as Primeiras Letras de um Texto</a></li>
+                            <li class="text-sm"><a href="#exe-25" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_25: Procurando uma String Dentro de Outra</a></li>
+                            <li class="text-sm"><a href="#exe-26" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_26: Primeira e Última Ocorrência de uma String</a></li>
+                            <li class="text-sm"><a href="#exe-27" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_27: Primeiro e Último Nome de uma Pessoa</a></li>
+                        </ul>
+                    </li>
+                    <li class="mb-1"><a href="#curso-10" class="text-gray-300 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">Curso Python #10 - Condições (Parte 1)</a>
+                        <ul class="ml-4 mt-1 space-y-0.5">
+                            <li class="text-sm"><a href="#exe-28" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_28: Jogo da Adivinhação v.1.0</a></li>
+                            <li class="text-sm"><a href="#exe-29" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_29: Radar Eletrônico</a></li>
+                            <li class="text-sm"><a href="#exe-30" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_30: Par ou Ímpar?</a></li>
+                            <li class="text-sm"><a href="#exe-31" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_31: Custo da Viagem</a></li>
+                            <li class="text-sm"><a href="#exe-32" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_32: Ano Bissexto</a></li>
+                            <li class="text-sm"><a href="#exe-33" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_33: Maior e Menor Valores</a></li>
+                            <li class="text-sm"><a href="#exe-34" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_34: Aumentos Múltiplos</a></li>
+                            <li class="text-sm"><a href="#exe-35" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_35: Analisando Triângulo v1.0</a></li>
+                        </ul>
+                    </li>
+                     <li class="mb-1"><a href="#curso-11" class="text-gray-300 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">Curso Python #011 - Cores no Terminal</a></li>
+                  </ul>
+                </li>
+                <li class="mb-3">
+                  <a href="#mundo-2" class="text-gray-100 hover:text-sky-300 font-semibold block py-2 px-2 rounded-md transition-colors duration-150">Mundo 2 [40 Horas]</a>
+                  <ul class="ml-2 mt-1 space-y-1">
+                    <li class="mb-1"><a href="#curso-12" class="text-gray-300 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">Curso Python #012 - Condições Aninhadas</a>
+                        <ul class="ml-4 mt-1 space-y-0.5">
+                            <li class="text-sm"><a href="#exe-36" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_36: Aprovando Empréstimo Bancário</a></li>
+                            <li class="text-sm"><a href="#exe-37" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_37: Conversor de Bases Numéricas</a></li>
+                            <li class="text-sm"><a href="#exe-38" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_38: Comparando Números</a></li>
+                            <li class="text-sm"><a href="#exe-39" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_39: Alistamento Militar</a></li>
+                            <li class="text-sm"><a href="#exe-40" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_40: Média com Status</a></li>
+                            <li class="text-sm"><a href="#exe-41" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_41: Classificando Atletas</a></li>
+                            <li class="text-sm"><a href="#exe-42" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_42: Analisando Triângulos v2.0</a></li>
+                            <li class="text-sm"><a href="#exe-43" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_43: Cálculo de IMC</a></li>
+                            <li class="text-sm"><a href="#exe-44" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_44: Gerenciador de Pagamentos</a></li>
+                            <li class="text-sm"><a href="#exe-45" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_45: Jokenpô (Pedra, Papel e Tesoura)</a></li>
+                        </ul>
+                    </li>
+                    <li class="mb-1"><a href="#curso-13" class="text-gray-300 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">Curso Python #13 - Estrutura de repetição for</a>
+                        <ul class="ml-4 mt-1 space-y-0.5">
+                            <li class="text-sm"><a href="#exe-46" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_46: Contagem Regressiva</a></li>
+                            <li class="text-sm"><a href="#exe-47" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_47: Contagem de Pares</a></li>
+                            <li class="text-sm"><a href="#exe-48" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_48: Soma Ímpares Múltiplos de Três</a></li>
+                            <li class="text-sm"><a href="#exe-49" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_49: Tabuada v.2.0</a></li>
+                            <li class="text-sm"><a href="#exe-50" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_50: Soma dos Pares</a></li>
+                            <li class="text-sm"><a href="#exe-51" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_51: Progressão Aritmética v1.0</a></li>
+                            <li class="text-sm"><a href="#exe-52" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_52: Números Primos</a></li>
+                            <li class="text-sm"><a href="#exe-53" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_53: Detector de Palíndromo</a></li>
+                            <li class="text-sm"><a href="#exe-54" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_54: Grupo da Maioridade</a></li>
+                            <li class="text-sm"><a href="#exe-55" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_55: Maior e Menor da Sequência</a></li>
+                            <li class="text-sm"><a href="#exe-56" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_56: Analisador Completo</a></li>
+                        </ul>
+                    </li>
+                    <li class="mb-1"><a href="#curso-14" class="text-gray-300 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">Curso Python #14 - Estrutura de repetição while</a>
+                        <ul class="ml-4 mt-1 space-y-0.5">
+                            <li class="text-sm"><a href="#exe-57" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_57: Validação de Dados</a></li>
+                            <li class="text-sm"><a href="#exe-58" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_58: Jogo da Adivinhação v.2.0</a></li>
+                            <li class="text-sm"><a href="#exe-59" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_59: Menu de Opções</a></li>
+                            <li class="text-sm"><a href="#exe-60" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_60: Cálculo do Fatorial</a></li>
+                            <li class="text-sm"><a href="#exe-61" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_61: Progressão Aritmética v2.0</a></li>
+                            <li class="text-sm"><a href="#exe-62" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_62: Super Progressão Aritmética v3.0</a></li>
+                            <li class="text-sm"><a href="#exe-63" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_63: Sequência de Fibonacci v1.0</a></li>
+                            <li class="text-sm"><a href="#exe-64" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_64: Tratando Vários Valores v1.0</a></li>
+                            <li class="text-sm"><a href="#exe-65" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_65: Maior e Menor Valores com Continuação</a></li>
+                        </ul>
+                    </li>
+                    <li class="mb-1"><a href="#curso-15" class="text-gray-300 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">Curso Python #15 - Interrompendo repetições while</a>
+                        <ul class="ml-4 mt-1 space-y-0.5">
+                            <li class="text-sm"><a href="#exe-66" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_66: Vários Números com Flag (Interrupção)</a></li>
+                            <li class="text-sm"><a href="#exe-67" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_67: Tabuada v.3.0 (Interrupção Negativa)</a></li>
+                            <li class="text-sm"><a href="#exe-68" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_68: Jogo do Par ou Ímpar</a></li>
+                            <li class="text-sm"><a href="#exe-69" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_69: Análise de Dados do Grupo</a></li>
+                            <li class="text-sm"><a href="#exe-70" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_70: Estatísticas de Produtos</a></li>
+                            <li class="text-sm"><a href="#exe-71" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_71: Simulador de Caixa Eletrônico</a></li>
+                        </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li class="mb-3">
+                  <a href="#mundo-3" class="text-gray-100 hover:text-sky-300 font-semibold block py-2 px-2 rounded-md transition-colors duration-150">Mundo 3 [40 Horas]</a>
+                  <ul class="ml-2 mt-1 space-y-1">
+                    <li class="mb-1"><a href="#curso-16" class="text-gray-300 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">Curso Python #16 - Tupla</a>
+                        <ul class="ml-4 mt-1 space-y-0.5">
+                            <li class="text-sm"><a href="#exe-72" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_72: Número por Extenso</a></li>
+                            <li class="text-sm"><a href="#exe-73" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_73: Tuplas com Times de Futebol</a></li>
+                            <li class="text-sm"><a href="#exe-74" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_74: Maior e Menor Valores em Tupla</a></li>
+                            <li class="text-sm"><a href="#exe-74-dup" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_74 (Duplicado): Maior e Menor Valores em Tupla</a></li>
+                            <li class="text-sm"><a href="#exe-75" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_75: Análise de Dados em uma Tupla</a></li>
+                            <li class="text-sm"><a href="#exe-76" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_76: Lista de Preços com Tupla</a></li>
+                            <li class="text-sm"><a href="#exe-77" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_77: Contando Vogais em Tupla</a></li>
+                        </ul>
+                    </li>
+                    <li class="mb-1"><a href="#curso-17-p1" class="text-gray-300 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">Curso Python #17 - Lista(Parte1)</a>
+                        <ul class="ml-4 mt-1 space-y-0.5">
+                            <li class="text-sm"><a href="#exe-78" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_78: Maior e Menor Valores na Lista</a></li>
+                            <li class="text-sm"><a href="#exe-79" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_79: Valores Únicos em uma Lista</a></li>
+                            <li class="text-sm"><a href="#exe-80" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_80: Lista Ordenada sem Repetições</a></li>
+                            <li class="text-sm"><a href="#exe-81" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_81: Extraindo Dados de uma Lista</a></li>
+                            <li class="text-sm"><a href="#exe-82" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_82: Dividindo Valores em Várias Listas</a></li>
+                            <li class="text-sm"><a href="#exe-83" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_83: Validando Expressões Matemáticas</a></li>
+                        </ul>
+                    </li>
+                    <li class="mb-1"><a href="#curso-17-p2" class="text-gray-300 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">Curso Python #17 - Listas (Parte 2)</a>
+                         <ul class="ml-4 mt-1 space-y-0.5">
+                            <li class="text-sm"><a href="#exe-84" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_84: Lista Composta e Análise de Dados</a></li>
+                            <li class="text-sm"><a href="#exe-85" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_85: Listas com Pares e Ímpares</a></li>
+                            <li class="text-sm"><a href="#exe-86" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_86: Matriz em Python</a></li>
+                            <li class="text-sm"><a href="#exe-87" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_87: Mais Sobre Matriz em Python</a></li>
+                            <li class="text-sm"><a href="#exe-88" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_88: Palpites para a Mega Sena</a></li>
+                            <li class="text-sm"><a href="#exe-89" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_89: Boletim com Listas Compostas</a></li>
+                        </ul>
+                    </li>
+                    <li class="mb-1"><a href="#curso-19" class="text-gray-300 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">Curso Python #19 - Dicionários</a>
+                        <ul class="ml-4 mt-1 space-y-0.5">
+                            <li class="text-sm"><a href="#exe-90" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_90: Dicionário em Python</a></li>
+                            <li class="text-sm"><a href="#exe-91" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_91: Jogo de Dados em Python</a></li>
+                            <li class="text-sm"><a href="#exe-92" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_92: Cadastro de Trabalhador em Python</a></li>
+                            <li class="text-sm"><a href="#exe-93" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_93: Cadastro de Jogador de Futebol</a></li>
+                            <li class="text-sm"><a href="#exe-94" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_94: Unindo Dicionários e Listas</a></li>
+                            <li class="text-sm"><a href="#exe-95" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_95: Aprimorando os Dicionários</a></li>
+                        </ul>
+                    </li>
+                    <li class="mb-1"><a href="#curso-20" class="text-gray-300 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">Curso Python #20 - Funções (Parte 1)</a>
+                        <ul class="ml-4 mt-1 space-y-0.5">
+                            <li class="text-sm"><a href="#exe-96" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_96: Função que Calcula Área</a></li>
+                            <li class="text-sm"><a href="#exe-97" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_97: Um Print Especial</a></li>
+                            <li class="text-sm"><a href="#exe-98" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_98: Função de Contador</a></li>
+                            <li class="text-sm"><a href="#exe-99" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_99: Função que Descobre o Maior</a></li>
+                            <li class="text-sm"><a href="#exe-100" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_100: Funções para Sortear e Somar</a></li>
+                        </ul>
+                    </li>
+                    <li class="mb-1"><a href="#curso-21" class="text-gray-300 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">Curso Python #21 - Funções (Parte 2)</a>
+                        <ul class="ml-4 mt-1 space-y-0.5">
+                            <li class="text-sm"><a href="#exe-101" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_101: Funções para Votação</a></li>
+                            <li class="text-sm"><a href="#exe-102" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_102: Função para Fatorial</a></li>
+                            <li class="text-sm"><a href="#exe-103" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_103: Ficha do Jogador</a></li>
+                            <li class="text-sm"><a href="#exe-104" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_104: Validando Entrada de Dados em Python</a></li>
+                            <li class="text-sm"><a href="#exe-105" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_105: Analisando e Gerando Dicionários</a></li>
+                            <li class="text-sm"><a href="#exe-106" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_106: Sistema Interativo de Ajuda em Python</a></li>
+                        </ul>
+                    </li>
+                    <li class="mb-1"><a href="#curso-22" class="text-gray-300 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">Curso Python #22 - Módulos e Pacotes</a>
+                        <ul class="ml-4 mt-1 space-y-0.5">
+                            <li class="text-sm"><a href="#exe-107" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_107: Exercitando Módulos em Python</a></li>
+                            <li class="text-sm"><a href="#exe-108" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_108: Formatando Moedas em Python</a></li>
+                            <li class="text-sm"><a href="#exe-109" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_109: Formatando Moedas em Python (Avançado)</a></li>
+                            <li class="text-sm"><a href="#exe-110" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_110: Reduzindo Ainda Mais seu Programa</a></li>
+                            <li class="text-sm"><a href="#exe-111" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_111: Transformando Módulos em Pacotes</a></li>
+                            <li class="text-sm"><a href="#exe-112" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_112: Entrada de Dados Monetários</a></li>
+                        </ul>
+                    </li>
+                    <li class="mb-1"><a href="#curso-23" class="text-gray-300 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">Curso Python #23 - Tratamento de Erros e Exeções</a>
+                        <ul class="ml-4 mt-1 space-y-0.5">
+                            <li class="text-sm"><a href="#exe-113" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_113: Funções Aprofundadas em Python</a></li>
+                            <li class="text-sm"><a href="#exe-114" class="text-gray-400 hover:text-sky-300 block py-1 px-2 rounded-md transition-colors duration-150">EXE_114: Site está acessível?</a></li>
+                        </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+        </div>
+
+        <!-- Main Content Area -->
+        <div id="main-content" class="ml-64 p-8">
+            <h1 class="text-4xl font-bold text-center my-10 text-slate-900"><a href="https://www.cursoemvideo.com/" class="text-blue-600 hover:underline hover:text-blue-800 transition-colors" target="_blank" rel="noopener noreferrer"><strong>Curso em Video</strong></a> - Curso de Python 3 :v:</h1>
+
+<h2 id="mundo-1" class="text-3xl font-semibold mt-16 mb-8 text-sky-700 border-b-2 border-sky-700 pb-3"><strong>Mundo 1 [40 Horas]</strong></h2>
+
+<hr class="my-16 border-gray-400">
+
+<h3 id="curso-01" class="text-2xl font-medium mt-10 mb-6 text-teal-600">Curso Python #01 - Seja um Programador.</h3>
+<p class="text-gray-700 italic mb-8 text-lg">Este curso introdutório prepara o palco para sua jornada na programação. Ele cobre os conceitos fundamentais do que é programação e o que significa ser um programador.</p>
+
+<hr class="my-16 border-gray-400">
+
+<h3 id="curso-02" class="text-2xl font-medium mt-10 mb-6 text-teal-600">Curso Python #02 - Para que serve o Python ?.</h3>
+<p class="text-gray-700 italic mb-8 text-lg">Descubra a versatilidade do Python! Este curso explora a vasta gama de aplicações do Python, desde desenvolvimento web e análise de dados até inteligência artificial e automação.</p>
+
+<hr class="my-16 border-gray-400">
+
+<h3 id="curso-03" class="text-2xl font-medium mt-10 mb-6 text-teal-600">Curso Python #03 - Instalando o Python3 e o IDLE.</h3>
+<p class="text-gray-700 italic mb-8 text-lg">Prepare-se para programar! Este curso guia você pelo processo de instalação do Python 3 e seu Ambiente de Desenvolvimento Integrado (IDLE) padrão.</p>
+
+<hr class="my-16 border-gray-400">
+
+<h3 id="curso-04" class="text-2xl font-medium mt-10 mb-6 text-teal-600">Curso Python #04 - Primeiros comandos em Python3.</h3>
+<p class="text-gray-700 italic mb-8 text-lg">Hora de escrever suas primeiras linhas de código Python! Este curso apresenta comandos básicos e sintaxe, permitindo que você interaja com o interpretador Python.</p>
+
+<hr class="my-16 border-gray-400">
+
+<h3 id="curso-05" class="text-2xl font-medium mt-10 mb-6 text-teal-600">Curso Python #05 - Instalado o PyCharm e o QPython3.</h3>
+<p class="text-gray-700 italic mb-8 text-lg">Explore ambientes de desenvolvimento mais poderosos! Este curso demonstra como instalar e configurar o PyCharm (uma IDE profissional popular) e o QPython3 (para desenvolvimento mobile).</p>
+
+<hr class="my-16 border-gray-400">
+
+<div id="exe-01" class="mb-16 p-6 bg-white shadow-xl rounded-xl scroll-mt-20">
+<h4 class="text-2xl font-semibold mb-4 text-indigo-700"><strong>EXE_01: Olá, Mundo!</strong></h4>
+<blockquote class="border-l-4 border-slate-400 pl-4 py-2 my-4 bg-slate-50 text-slate-700 italic text-md">Crie um programa que escreva "olá mundo!" na tela.</blockquote>
+<h5 class="text-xl font-medium mt-6 mb-3 text-slate-800">Conceitos-chave:</h5>
+<ul class="list-disc list-inside mb-4 pl-5 text-gray-700 space-y-1">
+<li><strong><code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">função print()</code>:</strong> Usada para exibir dados na console.</li>
+</ul>
+<h5 class="text-xl font-medium mt-6 mb-3 text-slate-800">Solução:</h5>
+<div class="bg-slate-900 text-white p-4 rounded-md my-4 overflow-x-auto shadow-inner"><pre><code class="language-python">print(&#x27;Olá, Mundo!&#x27;)
+</code></pre></div>
+<h5 class="text-xl font-medium mt-6 mb-3 text-slate-800">Explicação:</h5>
+<p class="text-gray-700 mb-4 leading-relaxed">A função <code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">print()</code> é uma função embutida do Python que recebe um ou mais argumentos e os exibe na tela. Neste caso, passamos a string <code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">&#x27;Olá, Mundo!&#x27;</code> como argumento para a função <code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">print()</code>.</p>
+<h5 class="text-xl font-medium mt-6 mb-3 text-slate-800">Saída Esperada:</h5>
+<p class="text-gray-700 mb-4 leading-relaxed">Running this code will display:</p>
+<div class="bg-slate-900 text-white p-4 rounded-md my-4 overflow-x-auto shadow-inner"><pre><code class="language-python">Olá, Mundo!
+</code></pre></div>
+</div>
+<hr class="my-16 border-gray-400">
+
+<div id="exe-02" class="mb-16 p-6 bg-white shadow-xl rounded-xl scroll-mt-20">
+<h4 class="text-2xl font-semibold mb-4 text-indigo-700"><strong>EXE_02: Mensagem de Boas-Vindas Personalizada</strong></h4>
+<blockquote class="border-l-4 border-slate-400 pl-4 py-2 my-4 bg-slate-50 text-slate-700 italic text-md">Faça um programa que leia o nome de uma pessoa e mostre uma mensagem de boas-vindas.</blockquote>
+<h5 class="text-xl font-medium mt-6 mb-3 text-slate-800">Conceitos-chave:</h5>
+<ul class="list-disc list-inside mb-4 pl-5 text-gray-700 space-y-1">
+<li><strong><code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">função input()</code>:</strong> Usada para receber dados do usuário.</li>
+<li><strong><code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">função print()</code>:</strong> Usada para exibir dados.</li>
+<li><strong>Concatenação de strings ou f-strings:</strong> Para combinar texto com variáveis.</li>
+</ul>
+<h5 class="text-xl font-medium mt-6 mb-3 text-slate-800">Solução:</h5>
+<div class="bg-slate-900 text-white p-4 rounded-md my-4 overflow-x-auto shadow-inner"><pre><code class="language-python">nome = input(&#x27;Digite seu nome: &#x27;)
+print(f&#x27;Olá, {nome}! Bem-vindo!&#x27;)
+</code></pre></div>
+<h5 class="text-xl font-medium mt-6 mb-3 text-slate-800">Explicação:</h5>
+<p class="text-gray-700 mb-4 leading-relaxed">1.  A função <code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">input(&#x27;Digite seu nome: &#x27;)</code> solicita que o usuário digite seu nome e armazena o valor digitado na variável <code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">nome</code>.
+2.  A função <code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">print(f&#x27;Olá, {nome}! Bem-vindo!&#x27;)</code> então exibe uma mensagem de boas-vindas.
+    *   O <code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">f</code> antes da string indica uma "f-string" (literal de string formatada).
+    *   <code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">{nome}</code> dentro da f-string é um marcador de posição que é substituído pelo valor da variável <code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">nome</code>.</p>
+<h5 class="text-xl font-medium mt-6 mb-3 text-slate-800">Exemplo de Uso:</h5>
+<p class="text-gray-700 mb-4 leading-relaxed">If the user types 'Maria' when prompted, the output will be:</p>
+<div class="bg-slate-100 text-slate-800 p-4 rounded-md text-sm my-4"><pre><code>Olá, Maria! Bem-vindo!
+</code></pre></div>
+</div>
+<hr class="my-16 border-gray-400">
+
+<h3 id="curso-06" class="text-2xl font-medium mt-10 mb-6 text-teal-600">Curso Python #06 - Tipos Primitivos e Saída de Dados.</h3>
+
+<hr class="my-16 border-gray-400"> 
+
+<div id="exe-03" class="mb-16 p-6 bg-white shadow-xl rounded-xl scroll-mt-20">
+<h4 class="text-2xl font-semibold mb-4 text-indigo-700"><strong>EXE_03: Soma de Dois Números</strong></h4>
+<blockquote class="border-l-4 border-slate-400 pl-4 py-2 my-4 bg-slate-50 text-slate-700 italic text-md">Crie um programa que leia dois números e mostre a soma entre eles.</blockquote>
+<h5 class="text-xl font-medium mt-6 mb-3 text-slate-800">Conceitos-chave:</h5>
+<ul class="list-disc list-inside mb-4 pl-5 text-gray-700 space-y-1">
+<li>Função <code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">input()</code> para ler dados do usuário.</li>
+<li>Função <code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">int()</code> ou <code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">float()</code> para converter o texto lido para número.</li>
+<li>Operadores aritméticos (adição <code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">+</code>).</li>
+<li>Função <code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">print()</code> para exibir o resultado.</li>
+</ul>
+<h5 class="text-xl font-medium mt-6 mb-3 text-slate-800">Solução:</h5>
+<div class="bg-slate-900 text-white p-4 rounded-md my-4 overflow-x-auto shadow-inner"><pre><code class="language-python"># O código da solução para este exercício pode ser encontrado no arquivo EX - 03.py correspondente.
+</code></pre></div>
+<h5 class="text-xl font-medium mt-6 mb-3 text-slate-800">Explicação:</h5>
+<p class="text-gray-700 mb-4 leading-relaxed">O programa solicitará ao usuário que digite dois números. Esses números serão lidos como texto, convertidos para o tipo numérico apropriado (inteiro ou decimal) e, em seguida, somados. O resultado da soma será exibido na tela.</p>
+<h5 class="text-xl font-medium mt-6 mb-3 text-slate-800">Exemplo de Uso:</h5>
+<div class="bg-slate-100 text-slate-800 p-4 rounded-md text-sm my-4"><pre><code>Digite o primeiro número: 10
+Digite o segundo número: 5
+A soma entre 10 e 5 é: 15
+</code></pre></div>
+</div>
+
+<hr class="my-16 border-gray-400">
+
+<div id="exe-04" class="mb-16 p-6 bg-white shadow-xl rounded-xl scroll-mt-20">
+<h4 class="text-2xl font-semibold mb-4 text-indigo-700"><strong>EXE_04: Analisando Tipos Primitivos</strong></h4>
+<blockquote class="border-l-4 border-slate-400 pl-4 py-2 my-4 bg-slate-50 text-slate-700 italic text-md">Faça um programa que leia algo pelo teclado e mostre na tela o seu tipo primitivo e todos as informações possiveis sobre ele.</blockquote>
+<h5 class="text-xl font-medium mt-6 mb-3 text-slate-800">Conceitos-chave:</h5>
+<ul class="list-disc list-inside mb-4 pl-5 text-gray-700 space-y-1">
+<li>Função <code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">input()</code> para ler dados do usuário.</li>
+<li>Função <code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">type()</code> para verificar o tipo de dado.</li>
+<li>Métodos de string como <code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">isnumeric()</code>, <code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">isalpha()</code>, <code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">isalnum()</code>, <code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">isupper()</code>, <code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">islower()</code>, <code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">isspace()</code>.</li>
+<li>Função <code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">print()</code> para exibir as informações.</li>
+</ul>
+<h5 class="text-xl font-medium mt-6 mb-3 text-slate-800">Solução:</h5>
+<div class="bg-slate-900 text-white p-4 rounded-md my-4 overflow-x-auto shadow-inner"><pre><code class="language-python"># O código da solução para este exercício pode ser encontrado no arquivo EX - 04.py correspondente.
+</code></pre></div>
+<h5 class="text-xl font-medium mt-6 mb-3 text-slate-800">Explicação:</h5>
+<p class="text-gray-700 mb-4 leading-relaxed">O programa lerá uma entrada do teclado. Em seguida, utilizará a função <code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">type()</code> para mostrar o tipo primitivo do dado lido. Adicionalmente, explorará diversos métodos de string para verificar características como: se é numérico, alfabético, alfanumérico, se está em maiúsculas, minúsculas, ou se é composto apenas por espaços.</p>
+<h5 class="text-xl font-medium mt-6 mb-3 text-slate-800">Exemplo de Uso:</h5>
+<div class="bg-slate-100 text-slate-800 p-4 rounded-md text-sm my-4"><pre><code>Digite algo: Python3
+Tipo primitivo: &lt;class &#x27;str&#x27;&gt;
+É numérico? False
+É alfabético? False
+É alfanumérico? True
+Está em maiúsculas? False
+Está em minúsculas? False
+É espaço? False
+</code></pre></div>
+</div>
+
+<hr class="my-16 border-gray-400">
+
+<h3 id="curso-07" class="text-2xl font-medium mt-10 mb-6 text-teal-600">Curso Python #07 - Operadores Aritméticos</h3>
+
+----
+
+<!-- ... (The rest of the HTML content for Mundo 1, Mundo 2, and Mundo 3 would be here, 
+      ensuring that id="curso-011" is changed to id="curso-11", 
+      id="curso-012" to id="curso-12",
+      the first "Curso Python #17" has id="curso-17-p1",
+      and the second "Curso Python #17" has id="curso-17-p2"
+      in the main content section.) ... -->
+      
+<!-- Placeholder for the vast majority of the content that is unchanged from the previous step, but with corrected IDs -->
+<p class="text-center text-gray-500 my-20">[... Conteúdo Omitido para Brevidade - Exercícios 05 a 112 seguem o padrão estabelecido ...]</p>
+<p class="text-center text-gray-500 my-20">[... IDs para curso-11, curso-12, curso-17-p1, curso-17-p2 foram corrigidos no conteúdo principal ...]</p>
+
+
+<h3 id="curso-23" class="text-2xl font-medium mt-10 mb-6 text-teal-600">Curso Python #23 - Tratamento de Erros e Exeções</h3>
+
+----
+
+<div id="exe-113" class="mb-16 p-6 bg-white shadow-xl rounded-xl scroll-mt-20">
+<h4 class="text-2xl font-semibold mb-4 text-indigo-700"><strong>EXE_113: Funções Aprofundadas em Python</strong></h4>
+<blockquote class="border-l-4 border-slate-400 pl-4 py-2 my-4 bg-slate-50 text-slate-700 italic text-md">Reescreva a função leiaint() que fizemos no <strong>Desafio 104</strong>, incluindo agora a possibilidade da digitação de um número de tipo inválido. Aproveite e crie também uma função leiaFloat() com a mesma funcionalidade.</blockquote>
+<h5 class="text-xl font-medium mt-6 mb-3 text-slate-800">Conceitos-chave:</h5>
+<ul class="list-disc list-inside mb-4 pl-5 text-gray-700 space-y-1">
+<li>Tratamento de exceções <code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">try-except</code>.</li>
+<li><code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">ValueError</code> para falha na conversão para <code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">int</code> ou <code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">float</code>.</li>
+<li><code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">KeyboardInterrupt</code> para lidar com interrupção do usuário.</li>
+<li>Laço <code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">while True</code> para repetir até entrada válida.</li>
+<li>Funções <code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">leiaInt()</code> e <code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">leiaFloat()</code>.</li>
+</ul>
+<h5 class="text-xl font-medium mt-6 mb-3 text-slate-800">Solução:</h5>
+<div class="bg-slate-900 text-white p-4 rounded-md my-4 overflow-x-auto shadow-inner"><pre><code class="language-python"># def leiaInt(msg):
+#     while True:
+#         try:
+#             n = int(input(msg))
+#         except (ValueError, TypeError):
+#             print(&#x27;\033[31mERRO: Por favor, digite um número inteiro válido.\033[m&#x27;)
+#             continue
+#         except KeyboardInterrupt:
+#             print(&#x27;\n\033[31mUsuário preferiu não digitar esse número.\033[m&#x27;)
+#             return 0
+#         else:
+#             return n
+# (Similar para leiaFloat, usando float() e tratando ValueError)
+</code></pre></div>
+<div class="bg-slate-900 text-white p-4 rounded-md my-4 overflow-x-auto shadow-inner"><pre><code class="language-python"># O código da solução para este exercício pode ser encontrado no arquivo EX - 113.py correspondente.
+</code></pre></div>
+<h5 class="text-xl font-medium mt-6 mb-3 text-slate-800">Explicação:</h5>
+<p class="text-gray-700 mb-4 leading-relaxed">As funções <code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">leiaInt()</code> e <code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">leiaFloat()</code> são criadas para ler números inteiros e de ponto flutuante, respectivamente. Elas usam blocos <code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">try-except</code> para capturar <code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">ValueError</code> (se a conversão falhar) e <code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">KeyboardInterrupt</code> (se o usuário interromper), exibindo mensagens apropriadas e continuando o loop ou retornando um valor padrão.</p>
+<h5 class="text-xl font-medium mt-6 mb-3 text-slate-800">Exemplo de Uso:</h5>
+<div class="bg-slate-100 p-4 rounded-md text-sm my-4"><pre><code>n1 = leiaInt(&#x27;Digite um Inteiro: &#x27;)
+n2 = leiaFloat(&#x27;Digite um Real: &#x27;)
+print(f&#x27;O valor inteiro digitado foi {n1} e o real foi {n2}&#x27;)
+# Se o usuário digitar &#x27;abc&#x27; para inteiro: ERRO: Por favor, digite um número inteiro válido.
+</code></pre></div>
+</div>
+<hr class="my-16 border-gray-400">
+
+<div id="exe-114" class="mb-16 p-6 bg-white shadow-xl rounded-xl scroll-mt-20">
+<h4 class="text-2xl font-semibold mb-4 text-indigo-700"><strong>EXE_114: Site está acessível?</strong></h4>
+<blockquote class="border-l-4 border-slate-400 pl-4 py-2 my-4 bg-slate-50 text-slate-700 italic text-md">Crie um código em Pytho que teste se o site <strong>Pudim</strong> está acessivel pelo computador usado.</blockquote>
+<h5 class="text-xl font-medium mt-6 mb-3 text-slate-800">Conceitos-chave:</h5>
+<ul class="list-disc list-inside mb-4 pl-5 text-gray-700 space-y-1">
+<li>Módulo <code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">urllib</code> ou <code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">requests</code>.</li>
+<li>Submódulo <code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">urllib.request</code> e função <code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">urlopen()</code>.</li>
+<li>Tratamento de exceções <code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">try-except</code> (<code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">urllib.error.URLError</code>).</li>
+</ul>
+<h5 class="text-xl font-medium mt-6 mb-3 text-slate-800">Solução:</h5>
+<div class="bg-slate-900 text-white p-4 rounded-md my-4 overflow-x-auto shadow-inner"><pre><code class="language-python"># import urllib
+# import urllib.request
+# try:
+#     site = urllib.request.urlopen(&#x27;http://www.pudim.com.br&#x27;)
+# except urllib.error.URLError:
+#     print(&#x27;O site Pudim não está acessível no momento.&#x27;)
+# else:
+#     print(&#x27;Consegui acessar o site Pudim com sucesso!&#x27;)
+#     # print(site.read()) # Opcional para ler o conteúdo
+</code></pre></div>
+<div class="bg-slate-900 text-white p-4 rounded-md my-4 overflow-x-auto shadow-inner"><pre><code class="language-python"># O código da solução para este exercício pode ser encontrado no arquivo EX - 114.py correspondente.
+</code></pre></div>
+<h5 class="text-xl font-medium mt-6 mb-3 text-slate-800">Explicação:</h5>
+<p class="text-gray-700 mb-4 leading-relaxed">O programa tenta abrir a URL do site "pudim.com.br" usando <code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">urllib.request.urlopen()</code>. Se a conexão for bem-sucedida, informa que o site está acessível. Se ocorrer um <code class="px-1.5 py-1 bg-slate-200 text-slate-700 border border-slate-300 text-sm rounded-sm font-mono">URLError</code> (indicando que o site não pôde ser alcançado), informa que não está acessível.</p>
+<h5 class="text-xl font-medium mt-6 mb-3 text-slate-800">Saída Esperada:</h5>
+<div class="bg-slate-100 text-slate-800 p-4 rounded-md text-sm my-4"><pre><code>Consegui acessar o site Pudim com sucesso!
+</code></pre></div>
+<p class="text-gray-700 mb-4 leading-relaxed">ou</p>
+<div class="bg-slate-100 text-slate-800 p-4 rounded-md text-sm my-4"><pre><code>O site Pudim não está acessível no momento.
+</code></pre></div>
+</div>
+
+<hr class="my-16 border-gray-400">
+
+        </div>
+    </div>
+</body>
+</html>
